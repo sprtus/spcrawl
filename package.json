@@ -1,0 +1,9 @@
+{
+  "name": "spcrawler",
+  "version": "1.0.0",
+  "description": "SharePoint crawler utility",
+  "main": "bin/spcrawler.js",
+  "repository": "https://github.com/sprtus/spcrawler",
+  "author": "@kyleschaeffer",
+  "license": "MIT"
+}
