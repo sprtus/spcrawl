@@ -1,9 +1,29 @@
 {
-  "name": "spcrawler",
+  "name": "spcrawl",
   "version": "1.0.0",
-  "description": "SharePoint crawler utility",
-  "main": "bin/spcrawler.js",
-  "repository": "https://github.com/sprtus/spcrawler",
+  "description": "Crawl content in a SharePoint environment",
+  "bin": {
+    "spcrawl": "bin/spcrawl.js"
+  },
+  "scripts": {
+    "spcrawl": "NODE_ENV=development node ./bin/spcrawl"
+  },
+  "repository": "https://github.com/sprtus/spcrawl",
+  "bugs": {
+    "url": "https://github.com/sprtus/spcrawl/issues"
+  },
+  "keywords": [
+    "sharepoint",
+    "crawler"
+  ],
   "author": "@kyleschaeffer",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@pnp/pnpjs": "^1.2.8",
+    "commander": "^2.19.0",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.11",
+    "path": "^0.12.7",
+    "sp-pnp-node": "^2.1.3"
+  }
 }
