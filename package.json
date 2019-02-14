@@ -1,12 +1,17 @@
 {
   "name": "spcrawl",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Crawl content in a SharePoint environment",
+  "main": "./lib/index.js",
   "bin": {
-    "spcrawl": "bin/spcrawl.js"
+    "spcrawl": "./lib/index.js"
   },
   "scripts": {
-    "spcrawl": "NODE_ENV=development node ./bin/spcrawl"
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "test": "sudo npm i -g && pizza",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
   },
   "repository": "https://github.com/sprtus/spcrawl",
   "bugs": {
@@ -20,10 +25,18 @@
   "license": "MIT",
   "dependencies": {
     "@pnp/pnpjs": "^1.2.8",
+    "chalk": "^2.4.2",
     "commander": "^2.19.0",
     "fs": "^0.0.1-security",
+    "inquirer": "^6.2.2",
     "lodash": "^4.17.11",
     "path": "^0.12.7",
     "sp-pnp-node": "^2.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^11.9.3",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
   }
 }

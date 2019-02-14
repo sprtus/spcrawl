@@ -1,2 +1,5 @@
 node_modules
+config
 test
+spcrawl.json
+webs.json
