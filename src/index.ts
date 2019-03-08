@@ -13,7 +13,8 @@ program.version('0.0.1');
 
 // Commands
 program.command('init').action(command => Init.run());
-program.command('news').action(command => News.run(Config.get()));
+program.command('news-crawl').action(command => News.crawl(Config.get()));
+program.command('news-create').action(command => News.create(Config.get()));
 program.command('policies').action(command => Policies.run(Config.get()));
 program.command('scan').action(command => Scan.run(Config.get()));
 program.command('tag').action(command => Tag.run(Config.get()));
