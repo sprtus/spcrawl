@@ -66,6 +66,20 @@
     "@types/sharepoint" "2016.1.2"
     tslib "1.9.3"
 
+"@pnp/sp-clientsvc@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@pnp/sp-clientsvc/-/sp-clientsvc-1.2.9.tgz#abf9b2b1156ca8cf580f6835d8ffaf49c5446700"
+  integrity sha512-zaInYyQgbyk5a4+2KMr9qHRKHexqRQMiQk5eu6SM6fIEVyC5H422Tr5WREVzNTMp4YVl8MKuXkeTNxLhG7iTJQ==
+  dependencies:
+    tslib "1.9.3"
+
+"@pnp/sp-taxonomy@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@pnp/sp-taxonomy/-/sp-taxonomy-1.2.9.tgz#5a763cf24c3bb51737cc39e2d9bb816b066d7446"
+  integrity sha512-pJCuikAI2ntplc1VoyIo5wbe2F44t9B6sA66L7LqOPc/i+qU8ywjkelHznmshUomOzPycuFXqwgYcnHyxJVCXw==
+  dependencies:
+    tslib "1.9.3"
+
 "@pnp/sp@1.2.8":
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/@pnp/sp/-/sp-1.2.8.tgz#4c4a99657d925bed764d00952d74e3709ac7470a"

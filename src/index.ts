@@ -2,6 +2,7 @@
 
 import { Config } from './Config';
 import { Init } from './Init';
+import { Migrate } from './Migrate';
 import { Scan } from './Scan';
 import program from 'commander';
 
@@ -11,6 +12,7 @@ program.version('0.0.1');
 // Commands
 program.command('init').action(command => Init.run());
 program.command('scan').action(command => Scan.run(Config.get()));
+program.command('migrate').action(command => Migrate.run(Config.get()));
 
 // Parse command
 program.parse(process.argv);

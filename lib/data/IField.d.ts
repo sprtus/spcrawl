@@ -24,3 +24,7 @@ export interface IField {
     TypeShortDescription: string;
     [index: string]: any;
 }
+/**
+ * Default field
+ */
+export declare const NewField: IField;

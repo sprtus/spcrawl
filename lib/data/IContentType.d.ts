@@ -8,3 +8,7 @@ export interface IContentType {
     Name: string;
     [index: string]: any;
 }
+/**
+ * Default content type
+ */
+export declare const NewContentType: IContentType;

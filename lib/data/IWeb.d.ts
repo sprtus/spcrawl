@@ -1,21 +1,19 @@
 import { IContentType } from './IContentType';
-import { IFeature } from './IFeature';
 import { IField } from './IField';
 import { IList } from './IList';
 /**
  * SharePoint web or subsite
  */
 export interface IWeb {
-    ContentTypes?: IContentType[];
+    ContentTypes: IContentType[];
     Created: string;
     CustomMasterUrl: string;
     Description: string;
-    Features?: IFeature[];
-    Fields?: IField[];
+    Fields: IField[];
     Id: string;
     Language: number;
     LastItemModifiedDate: string;
-    Lists?: IList[];
+    Lists: IList[];
     MasterUrl: string;
     ServerRelativeUrl: string;
     Title: string;
