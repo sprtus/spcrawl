@@ -1,9 +1,7 @@
 import _ from 'lodash';
 import { ICrawlOptions } from './Config';
-import { NewWeb } from './data/IWeb';
 import { PnpNode } from 'sp-pnp-node';
-import { taxonomy, ITerm, ITermData } from '@pnp/sp-taxonomy';
-import { Utility } from './Utility';
+import { taxonomy } from '@pnp/sp-taxonomy';
 import { Web, CheckinType } from '@pnp/pnpjs';
 import chalk from 'chalk';
 
@@ -103,7 +101,7 @@ const offices: any[] = [
 const termSetId = 'a664dbf2-f7d4-485e-820a-22757e1418e9';
 
 // Migrate ACS
-export class Migrate {
+export class Tag {
   static async run (config: ICrawlOptions): Promise<void> {
     // Crawl sites
     for (const siteUrl of config.sites) {
