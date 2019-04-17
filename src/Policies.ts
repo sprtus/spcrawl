@@ -16,14 +16,14 @@ export class Policies {
         console.log(`  Connected to ${settings.siteUrl}`);
 
         // Get web
-        const web: Web = new Web(`${siteUrl}/policies-forms/policies-procedures`);
+        const web: Web = new Web(`${siteUrl}/policy-center`);
 
         // Get all pages
         const pages = await web.lists.getByTitle('Pages').items.select('*').expand('file').getAll().catch(e => console.error);
 
         // Iterate pages
         for (const page of pages as any[]) {
-          if (!page.File || !page.File.ServerRelativeUrl) continue;
+          if (!page.File || !page.File.ServerRelativeUrl || !page.ACSRelatedPolicies) continue;
           console.log(`Updating ${page.File.ServerRelativeUrl}`);
 
           // Check out
@@ -31,13 +31,14 @@ export class Policies {
           console.log('  Checked out');
 
           // Replace related policy URLs
-          let relatedPolicies = page.ACSRelatedPolicies.replace(/https:\/\/intranet\.acs\.org\/policycenter\//ig, '/policies-forms/policies-procedures/').replace(/\/policycenter\//ig, '/policies-forms/policies-procedures/');
+          // let relatedPolicies = page.ACSRelatedPolicies.replace(/https:\/\/intranet\.acs\.org\/policycenter\//ig, '/policies-forms/policies-procedures/').replace(/\/policycenter\//ig, '/policies-forms/policies-procedures/');
+          let relatedPolicies = page.ACSRelatedPolicies.replace(/\/policies-forms\/policies-procedures\//ig, '/policy-center/');
 
           // Replace related IDs
-          for (const rPage of pages as any[]) {
-            const searchTitle = new RegExp(`"Id":"\\d+","Title":"${rPage.Title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`, 'ig');
-            relatedPolicies = relatedPolicies.replace(searchTitle, `"Id":"${rPage.ID}","Title":"${rPage.Title}"`);
-          }
+          // for (const rPage of pages as any[]) {
+          //   const searchTitle = new RegExp(`"Id":"\\d+","Title":"${rPage.Title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`, 'ig');
+          //   relatedPolicies = relatedPolicies.replace(searchTitle, `"Id":"${rPage.ID}","Title":"${rPage.Title}"`);
+          // }
 
           // Update related policies
           await web.lists.getByTitle('Pages').items.getById(page.ID).update({
